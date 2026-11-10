@@ -22,8 +22,6 @@ Budget-conscious grocery shoppers in Pakistan who want a complete basket compari
 
 ## Non-functional requirements
 
-<!-- Every NFR needs a measurable target and a way to measure it. -->
-
 | ID | Category | Requirement | Target | How measured | Result |
 |----|----------|-------------|--------|--------------|--------|
 | NFR-01 | Performance | Optimize a cached basket locally | Under 3 seconds for the demonstration catalogue | Backend tests and manual API request | Pass |
