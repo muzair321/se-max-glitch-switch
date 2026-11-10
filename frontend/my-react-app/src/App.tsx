@@ -1,121 +1,30 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useMemo, useState } from 'react'
 import './App.css'
 
+type BasketItem = { name: string; detail: string; quantity: string; price: number; store: string; tone: string }
+const basketItems: BasketItem[] = [
+  { name: 'Premium Basmati Rice', detail: 'Falak · 2 kg bag', quantity: '1 ×', price: 640, store: 'Metro Online', tone: 'rice' },
+  { name: 'Cooking Oil', detail: 'Dalda · 1 litre bottle', quantity: '2 ×', price: 980, store: 'Metro Online', tone: 'oil' },
+  { name: 'All-purpose Flour', detail: 'Bake Parlor · 1 kg bag', quantity: '1 ×', price: 175, store: 'Al-Fatah', tone: 'flour' },
+  { name: 'Fresh Eggs', detail: 'Farm fresh · 12 pieces', quantity: '1 ×', price: 360, store: 'Al-Fatah', tone: 'eggs' },
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [list, setList] = useState('1 kg flour\n2 litres cooking oil\n1 dozen eggs\n2 kg rice')
+  const [budget, setBudget] = useState('2500')
+  const [exclude, setExclude] = useState('')
+  const [optimized, setOptimized] = useState(true)
+  const total = useMemo(() => basketItems.reduce((sum, item) => sum + item.price, 0), [])
+  const budgetValue = Number(budget) || 0
+  const overBudget = total > budgetValue
+  function optimize() { setOptimized(false); window.setTimeout(() => setOptimized(true), 500) }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <div className="app-shell"><header className="topbar"><a className="brand" href="#top"><span className="brand-mark">b</span><span>Bachat<span className="brand-light">Basket</span></span></a><nav><a className="active" href="#optimizer">Optimizer</a><a href="#how-it-works">How it works</a><a href="#catalogue">Catalogue</a></nav><div className="header-actions"><span className="snapshot"><span className="status-dot" /> Snapshot: 12 Nov 2024</span><button className="avatar" aria-label="Open profile">SA</button></div></header>
+      <main id="top"><section className="intro" id="optimizer"><div><p className="eyebrow">AI-ASSISTED GROCERY PLANNING</p><h1>Your basket,<br /><em>made smarter.</em></h1><p className="lede">Tell us what you need. We find the best combination of products, packages, and stores for your budget.</p></div><div className="trust-note"><span className="spark">✦</span><div><strong>Prices checked and validated</strong><small>Our optimization engine handles the maths. AI helps understand your list.</small></div></div></section>
+        <section className="workspace"><aside className="controls-panel"><div className="panel-heading"><span className="step">01</span><div><h2>Build your list</h2><p>Write naturally in English, Urdu, or Roman Urdu.</p></div></div><label htmlFor="grocery-list">Grocery list</label><textarea id="grocery-list" value={list} onChange={(event) => setList(event.target.value)} /><div className="parse-hint"><span>✦</span> 4 items understood <button type="button" onClick={() => setList('')}>Clear</button></div><div className="field-label"><label htmlFor="budget">Maximum budget</label><span>PKR</span></div><div className="input-wrap"><span>Rs.</span><input id="budget" type="number" value={budget} onChange={(event) => setBudget(event.target.value)} /></div><label htmlFor="exclude">Exclude brands <span className="optional">Optional</span></label><input id="exclude" className="text-input" placeholder="e.g. National, Shan" value={exclude} onChange={(event) => setExclude(event.target.value)} /><button type="button" className="optimize-button" onClick={optimize}><span>✦</span>{optimized ? 'Optimize my basket' : 'Finding the best basket...'}<b>→</b></button><p className="secure-note">⌁ Your list stays private and is never sold.</p></aside>
+          <section className="results-panel" aria-live="polite"><div className="results-top"><div><div className="result-kicker"><span className="check">✓</span> BEST VALUE FOUND</div><h2>Your optimized basket</h2><p>4 items · 2 stores · all quantities covered</p></div><button className="share-button" type="button">↗ Share basket</button></div><div className={`total-banner ${overBudget ? 'over' : ''}`}><div><span className="total-label">ESTIMATED TOTAL</span><strong>Rs. {total.toLocaleString()}</strong><small>Includes Rs. 100 delivery fees</small></div><div className="budget-status"><span className="budget-bar"><i style={{ width: `${Math.min((total / Math.max(budgetValue, total)) * 100, 100)}%` }} /></span><b>{overBudget ? 'Over budget' : `Rs. ${(budgetValue - total).toLocaleString()} left`}</b><small>of Rs. {budgetValue.toLocaleString()}</small></div></div><div className="basket-list">{basketItems.map((item) => <article className="basket-item" key={item.name}><div className={`product-icon ${item.tone}`}><span>{item.tone === 'eggs' ? '◌' : item.tone === 'oil' ? '◒' : item.tone === 'rice' ? '▦' : '✣'}</span></div><div className="product-info"><strong>{item.name}</strong><span>{item.detail}</span><small>{item.store}</small></div><span className="quantity">{item.quantity}</span><strong className="item-price">Rs. {item.price.toLocaleString()}</strong></article>)}</div><div className="store-summary"><div><span className="store-badge metro">M</span><div><strong>Metro Online</strong><small>2 products · Delivery Rs. 60</small></div></div><b>Rs. 1,620</b></div><div className="store-summary"><div><span className="store-badge alfatah">A</span><div><strong>Al-Fatah</strong><small>2 products · Delivery Rs. 40</small></div></div><b>Rs. 535</b></div><div className="result-footer"><span>↗ Compared across 4 stores</span><button type="button">See alternatives <b>→</b></button></div></section></section>
+        <section className="feature-strip" id="how-it-works"><div><span className="feature-number">01</span><div><strong>Understands your words</strong><p>English, Urdu, or Roman Urdu. Just type it your way.</p></div></div><div><span className="feature-number">02</span><div><strong>Does the real maths</strong><p>Package sizes, surplus, delivery fees, and minimums included.</p></div></div><div><span className="feature-number">03</span><div><strong>Respects your choices</strong><p>Brand exclusions and preferences are always honoured.</p></div></div></section><footer><span><span className="brand-mark small">b</span> BachatBasket</span><span>Built for smarter shopping in Pakistan <i>·</i> Fixed price snapshot for demo</span><span>AI-powered · Logic-validated</span></footer></main></div>
   )
 }
 
