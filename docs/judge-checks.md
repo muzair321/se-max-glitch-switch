@@ -2,6 +2,11 @@
 
 This page gives a short, reproducible check for each important product claim.
 
+## Live deployment
+
+- Frontend: https://se-max-glitch-switch.vercel.app/
+- Backend health endpoint: https://se-max-glitch-switch.onrender.com/api/health
+
 | Check | Steps | Expected result | Evidence |
 |------|-------|-----------------|----------|
 | Start the app | Follow [README.md](../README.md#run-locally) and open `http://localhost:5173` | Optimizer page loads | README run instructions |
@@ -19,6 +24,5 @@ This page gives a short, reproducible check for each important product claim.
 
 ## Known judge limitations
 
-- There is no public deployment URL in this repository; the judge must run the local services unless a deployment is provided separately.
 - Metro Mart is a comparison reference in the UI, not a live crawled catalogue.
 - Catalogue prices and availability come from the cached snapshot and may be stale.

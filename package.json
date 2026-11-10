@@ -1,0 +1,11 @@
+{
+  "name": "bachat-basket",
+  "private": true,
+  "scripts": {
+    "test:backend": "npm --prefix backend test",
+    "typecheck:backend": "npm --prefix backend run typecheck",
+    "lint:frontend": "npm --prefix frontend/my-react-app run lint",
+    "build:frontend": "npm --prefix frontend/my-react-app run build",
+    "test:all": "node scripts/test-all.mjs"
+  }
+}

@@ -12,25 +12,31 @@ Budget-conscious grocery shoppers in Pakistan often compare isolated prices whil
 
 ## Live deployment
 
-- **URL / install link:** No public deployment configured; run locally using the instructions below.
-- **Platform:** Web application: React/Vite frontend with a Node/Express API.
+- **Frontend:** https://se-max-glitch-switch.vercel.app/
+- **Backend API:** https://se-max-glitch-switch.onrender.com
+- **Platform:** Vercel-hosted React/Vite frontend with a Render-hosted Node/Express API.
 
 ## Judge quick start (under 5 minutes)
 
-1. Install Node.js 20 or newer.
-2. From the repository root, install dependencies and start both services:
+1. Open the live frontend at https://se-max-glitch-switch.vercel.app/.
+2. Keep the example list, set a budget, and select **Optimize my basket**.
+3. Confirm the optimized products, images, links, store logos, and Catalogue view load.
+
+To run locally instead, install Node.js 20 or newer and start both services:
+
+1. From the repository root, install dependencies and start the backend:
    ```powershell
    cd backend
    npm install
    npm run dev
    ```
-   In a second terminal:
+2. In a second terminal:
    ```powershell
    cd frontend/my-react-app
    npm install
    npm run dev
    ```
-3. Open http://localhost:5173, enter or keep the example list, set a budget, and select **Optimize my basket**. Product links open the source listing, and Catalogue shows the validated product images.
+3. Open http://localhost:5173.
 
 The API health check is available at http://localhost:3001/api/health.
 
@@ -60,7 +66,7 @@ npm install
 Optional:
 
 - `PORT` — backend port; defaults to `3001`.
-- `VITE_API_BASE_URL` — frontend API base URL; defaults to `http://localhost:3001`.
+- `VITE_API_BASE_URL` — frontend API base URL; production is `https://se-max-glitch-switch.onrender.com`; local default is `http://localhost:3001`.
 - `ALFATAH_CATALOGUE_URL` — comma-separated public Al-Fatah feed URLs used by the crawler.
 
 ### Run
@@ -91,10 +97,18 @@ Only use a real, publicly accessible feed URL when running the crawler. A failed
 
 ### Run tests
 
+Run the complete automated suite from the repository root:
+
+```powershell
+npm run test:all
+```
+
+This runs the backend tests and type-check, frontend lint, and frontend production build. The individual commands are:
+
 ```powershell
 cd backend
 npm test
-npm exec -- tsc --noEmit
+npm run typecheck
 cd ..\frontend\my-react-app
 npm run lint
 npm run build

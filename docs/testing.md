@@ -9,13 +9,21 @@ Backend unit tests cover quantity normalization, aliases, package coverage, exac
 From the repository root:
 
 ```powershell
+npm run test:all
+```
+
+The combined command runs all checks in sequence:
+
+```powershell
 npm --prefix backend test
-npm --prefix backend exec -- tsc --noEmit
+npm --prefix backend run typecheck
 npm --prefix frontend/my-react-app run lint
 npm --prefix frontend/my-react-app run build
 ```
 
 If PowerShell blocks `npm.ps1`, use `npm.cmd` instead.
+
+GitHub Actions runs the same checks automatically for pushes to `main` and pull requests. The workflow is at `.github/workflows/ci.yml`.
 
 ## Results summary
 
@@ -48,6 +56,7 @@ Frontend lint completed with two existing `react-hooks/exhaustive-deps` warnings
 | API health | Start backend and open `http://localhost:3001/api/health` | Returns `{"ok":true}` |
 | Optimization flow | Start both services, keep the example list, and click Optimize | Basket renders with prices and selected product links |
 | Catalogue flow | Open Catalogue from the frontend | Catalogue cards render source images where available |
+| Live deployment | Open `https://se-max-glitch-switch.vercel.app/` and optimize the example list | Live frontend reaches the deployed API and renders the basket |
 
 ## Measured metrics
 
@@ -66,4 +75,4 @@ Frontend lint completed with two existing `react-hooks/exhaustive-deps` warnings
 
 - Live Al-Fatah crawl output has been verified with 41 accepted listings. Carrefour was removed because direct crawler requests returned a challenge page.
 - Delivery fees may vary by city or order context.
-- No browser automation or production deployment test is included.
+- Browser automation is not included; live deployment was verified manually at the public frontend URL.
