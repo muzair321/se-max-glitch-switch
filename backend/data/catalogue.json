@@ -1,0 +1,26 @@
+{
+  "snapshotDate": "2024-11-12",
+  "currency": "PKR",
+  "stores": [
+    { "id": "metro", "name": "Metro Online", "deliveryFee": 60, "minimumOrder": 1000 },
+    { "id": "alfatah", "name": "Al-Fatah", "deliveryFee": 40, "minimumOrder": 500 },
+    { "id": "naheed", "name": "Naheed", "deliveryFee": 100, "minimumOrder": 1500 },
+    { "id": "pandamart", "name": "Pandamart", "deliveryFee": 80, "minimumOrder": 700 }
+  ],
+  "offers": [
+    { "id": "rice-falak-metro", "category": "rice", "aliases": ["rice", "basmati", "chawal"], "brand": "Falak", "storeId": "metro", "unit": "g", "packageQuantity": 2000, "packageLabel": "2 kg bag", "price": 640 },
+    { "id": "rice-kisan-alfatah", "category": "rice", "aliases": ["rice", "basmati", "chawal"], "brand": "Kisan", "storeId": "alfatah", "unit": "g", "packageQuantity": 1000, "packageLabel": "1 kg bag", "price": 315 },
+    { "id": "rice-falak-alfatah", "category": "rice", "aliases": ["rice", "basmati", "chawal"], "brand": "Falak", "storeId": "alfatah", "unit": "g", "packageQuantity": 2000, "packageLabel": "2 kg bag", "price": 675 },
+    { "id": "oil-dalda-metro", "category": "oil", "aliases": ["oil", "cooking oil", "tel"], "brand": "Dalda", "storeId": "metro", "unit": "ml", "packageQuantity": 1000, "packageLabel": "1 litre bottle", "price": 490 },
+    { "id": "oil-sufi-alfatah", "category": "oil", "aliases": ["oil", "cooking oil", "tel"], "brand": "Sufi", "storeId": "alfatah", "unit": "1000", "packageQuantity": 1000, "packageLabel": "1 litre bottle", "price": 475 },
+    { "id": "oil-dalda-naheed", "category": "oil", "aliases": ["oil", "cooking oil", "tel"], "brand": "Dalda", "storeId": "naheed", "unit": "ml", "packageQuantity": 1000, "packageLabel": "1 litre bottle", "price": 505 },
+    { "id": "flour-bake-metro", "category": "flour", "aliases": ["flour", "atta", "aata", "maida"], "brand": "Bake Parlor", "storeId": "metro", "unit": "g", "packageQuantity": 1000, "packageLabel": "1 kg bag", "price": 185 },
+    { "id": "flour-bake-alfatah", "category": "flour", "aliases": ["flour", "atta", "aata", "maida"], "brand": "Bake Parlor", "storeId": "alfatah", "unit": "g", "packageQuantity": 1000, "packageLabel": "1 kg bag", "price": 175 },
+    { "id": "flour-sunridge-alfatah", "category": "flour", "aliases": ["flour", "atta", "aata", "maida"], "brand": "Sunridge", "storeId": "alfatah", "unit": "g", "packageQuantity": 1000, "packageLabel": "1 kg bag", "price": 180 },
+    { "id": "eggs-farm-metro", "category": "eggs", "aliases": ["egg", "eggs", "anday", "anda"], "brand": "Farm Fresh", "storeId": "metro", "unit": "piece", "packageQuantity": 12, "packageLabel": "12 pieces", "price": 370 },
+    { "id": "eggs-farm-alfatah", "category": "eggs", "aliases": ["egg", "eggs", "anday", "anda"], "brand": "Farm Fresh", "storeId": "alfatah", "unit": "piece", "packageQuantity": 12, "packageLabel": "12 pieces", "price": 360 },
+    { "id": "eggs-farm-pandamart", "category": "eggs", "aliases": ["egg", "eggs", "anday", "anda"], "brand": "Farm Fresh", "storeId": "pandamart", "unit": "piece", "packageQuantity": 6, "packageLabel": "6 pieces", "price": 190 },
+    { "id": "sugar-dal-alfatah", "category": "sugar", "aliases": ["sugar", "cheeni"], "brand": "Dalda", "storeId": "alfatah", "unit": "g", "packageQuantity": 1000, "packageLabel": "1 kg bag", "price": 165 },
+    { "id": "sugar-dal-metro", "category": "sugar", "aliases": ["sugar", "cheeni"], "brand": "Dalda", "storeId": "metro", "unit": "g", "packageQuantity": 2000, "packageLabel": "2 kg bag", "price": 315 }
+  ]
+}
