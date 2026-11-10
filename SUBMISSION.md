@@ -14,7 +14,7 @@ Complete before submitting to the organizers.
 ## Checklist
 
 - [x] Product is deployed and reachable without our laptops.
-- [ ] README judge quick start tested by a team member on a fresh device or browser.
+- [x] README judge quick start tested by a team member on a fresh device or browser.
 - [x] No test account is required.
 - [x] Backend unit tests pass; see [docs/testing.md](docs/testing.md).
 - [x] [docs/requirements.md](docs/requirements.md) completed.
