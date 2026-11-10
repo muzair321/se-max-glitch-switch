@@ -4,7 +4,7 @@ Complete before submitting to the organizers.
 
 ## Submission details
 
-- **Team name:** Glitch Switch
+- **Team name:** Glitch Switch (Bachat Mart)
 - **Repository URL:** https://github.com/muzair321/se-max-glitch-switch
 - **Final commit hash:** Complete after committing the final documentation changes.
 - **Live URL / install link:** https://se-max-glitch-switch.vercel.app/
