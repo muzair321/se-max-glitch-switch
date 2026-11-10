@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-labelledby="title">
+  <title>Metro Mart</title>
+  <rect width="160" height="48" rx="8" fill="#d12b2b"/>
+  <path d="M17 33V15h6l6 8 6-8h6v18h-6V24l-6 8-6-8v9h-6Z" fill="#fff"/>
+  <text x="50" y="31" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700">Metro Mart</text>
+</svg>
