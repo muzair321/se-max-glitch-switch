@@ -9,7 +9,7 @@ Complete before submitting to the organizers.
 - **Final commit hash:** Complete after committing the final documentation changes.
 - **Live URL / install link:** https://se-max-glitch-switch.vercel.app/
 - **Backend API:** https://se-max-glitch-switch.onrender.com
-- **Submitted at (time):** Complete at submission time.
+- **Submitted at (time):** 3:00 PM 10th November, 2026
 
 ## Checklist
 
