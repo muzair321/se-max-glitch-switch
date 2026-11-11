@@ -4,17 +4,17 @@ Complete before submitting to the organizers.
 
 ## Submission details
 
-- **Team name:** Glitch Switch
+- **Team name:** Glitch Switch (Bachat Mart)
 - **Repository URL:** https://github.com/muzair321/se-max-glitch-switch
 - **Final commit hash:** Complete after committing the final documentation changes.
 - **Live URL / install link:** https://se-max-glitch-switch.vercel.app/
 - **Backend API:** https://se-max-glitch-switch.onrender.com
-- **Submitted at (time):** Complete at submission time.
+- **Submitted at (time):** 3:00 PM 10th November, 2026
 
 ## Checklist
 
 - [x] Product is deployed and reachable without our laptops.
-- [ ] README judge quick start tested by a team member on a fresh device or browser.
+- [x] README judge quick start tested by a team member on a fresh device or browser.
 - [x] No test account is required.
 - [x] Backend unit tests pass; see [docs/testing.md](docs/testing.md).
 - [x] [docs/requirements.md](docs/requirements.md) completed.
