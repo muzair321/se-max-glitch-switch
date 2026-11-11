@@ -124,6 +124,7 @@ npm run build
 
 ## Documentation
 
+- [Product overview, architecture, and capacity estimate](docs/product-overview.md)
 - [Requirements](docs/requirements.md)
 - [Design](docs/design.md)
 - [Testing](docs/testing.md)
